@@ -4,7 +4,7 @@ if (isset($_SESSION["id_apart_select"])) {
     $idApart = $_SESSION["id_apart_select"];
     $currentLocation = getCurrentLocation($idApart);
     $idLocation = $currentLocation["id_location"];
-    $responsable = getResponsableLocation($idLocation);
+    $responsable = getRespLocationApartement($idApart);
 }
 ?>
 <section class="form-locataire">
@@ -22,7 +22,6 @@ if (isset($_SESSION["id_apart_select"])) {
             <li><input type="radio" name="sexe" id="" value="M"> homme</li>
             <li><input type="radio" name="sexe" id="" value="F"> femme</li>
         </ul>
-
         <?php if ($responsable == null) { ?>
             <input type="hidden" name="resp" value="1">
             <input type="tel" name="num_resp_1" id="" placeholder="numero 1">

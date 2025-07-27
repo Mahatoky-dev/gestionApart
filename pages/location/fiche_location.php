@@ -1,24 +1,35 @@
+<?php
+session_start();
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    $idApart = $_SESSION["id_apart_select"];
+    $listeLocataires = getLocataire($idApart);
+    $responsable = getRespLocationApartement($idApart);
+    $location = getCurrentLocation($idApart);
+}
+?>
 <section class="fiche-location">
     <article class="info-general">
-        <h2>Apartement N° x</h2>
-        <h5>louer depuis : sf</h5>
+        <h2>Apartement N° <?= $location["id_apart"] ?></h2>
+        <h5>louer depuis : <?= $location["date_debut"] ?></h5>
         <h4>liste locataire :</h4>
         <ul>
-            <li>locataire 1</li>
-            <li>locataire 2</li>
+            <?php foreach ($listeLocataires as $locataire) { ?>
+                <li><?= $locataire["nom"] ?></li>
+            <?php } ?>
         </ul>
     </article>
     <article class="resp-location">
-        <h3>Reponsable </h3>
+        <h3>Reponsable : <?= $responsable["nom_resp"] ?></h3>
         <ul>
-            <li>num 1</li>
-            <li>num 2</li>
+            <li><?= $responsable["num_resp_1"] ?></li>
+            <li><?= $responsable["num_resp_2"] ?></li>
         </ul>
     </article>
     <article class="action">
         <ul>
-            <li> <a href="modele.php?p=location/form_locataire.php"> ajouter locatiare </a> </li>
-            <li> <a href=""> terminer</a></li>
+            <li>
+                <a href="modele.php?p=location/form_locataire.php"> ajouter locatiare </a>
+            </li>
         </ul>
     </article>
 </section>

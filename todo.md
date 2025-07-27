@@ -125,6 +125,20 @@
             - [ok] cette form va vers un traitement insertion locataire
             - [ok] qui va insert le nom le loataire , le responsable si il sagit d'un resonsable
             - [ok] et qui va rediriger ver la page fiche_location 
-        - fiche_location :
-            - afficher les info generale de la location 
-            - bouton ajouter locataire va ver la page form_locataire
+        - [ôk] fiche_location :
+            - [ôk] afficher les info generale de la location
+                - [ok] cree fonction pour recuperer les information d'une location
+                    - [ok] recuperation des locataire
+                    - [ok] recuperation des dates 
+                    - [ok] recuperation du responsable
+                - [ok] utiliser la fonciton dans la page de fiche 
+            - [ok] bouton ajouter locataire va ver la page form_locataire
+
+
+
+orientation aartements :
+    - [ok] recuperer la liste des apartements
+    - [ok] recuperer la current responsable d'une apartement 
+    - [ok] recuperer la liste des current locataire d'une apartement
+    - [ok] recuperer les information de location d'une apartement
+

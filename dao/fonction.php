@@ -26,7 +26,6 @@ function addLocataire($idLocation,$nom,$sexe) {
                 locataire (id_location,nom,sexe) 
             VALUE (%s,'%s','%s');";
     $sql = sprintf($sql,$idLocation,$nom,$sexe);
-    var_dump($sql);
     $request = mysqli_query(bddConnect(),$sql);
 
     return $request == null ? false : true;
@@ -57,7 +56,6 @@ function stopLocation($idLocation) {
             SET date_fin = NOW()
             WHERE id_location = %s;";
     $sql = sprintf($sql,$idLocation);
-    var_dump($sql);
     $request = mysqli_query(bddConnect(),$sql);
 
     return $request == null ? false : true;
@@ -103,13 +101,22 @@ function getLastIssertId() {
     return mysqli_fetch_assoc($request)["LAST_INSERT_ID()"];
 }
 
-function getResponsableLocation($idLocation) {
-    $sql = "SELECT * FROM v_resp_location_locataire WHERE id_location = %s;";
-    $sql = sprintf($sql,$idLocation);
+function getRespLocationApartement($idApart) {
+    $sql = "SELECT id_resp,nom_resp,num_resp_1 ,num_resp_2 FROM v_apart_resp WHERE id_apart = %s;";
+    $sql = sprintf($sql,$idApart);
     $request = mysqli_query(bddConnect(),$sql);
     return mysqli_fetch_assoc($request);
 }
-function locationHaveResponsable($idLocation) {
-    return getResponsableLocation($idLocation) != null ;
+
+function getLocataire($idApart) {
+    $sql = "SELECT * FROM v_apart_locataire  WHERE id_apart = %s;";
+    $sql = sprintf($sql,$idApart);
+    $request = mysqli_query(bddConnect(),$sql);
+
+    $listeLocataires = array();
+    while(($loc = mysqli_fetch_assoc($request)) != null) {
+        $listeLocataires[] = $loc;
+    }
+    return $listeLocataires;
 }
 ?>

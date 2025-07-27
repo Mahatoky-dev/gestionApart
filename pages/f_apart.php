@@ -1,19 +1,31 @@
+<?php if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["id_apart"])) {
+    $id_apart = $_GET["id_apart"];
+    $apart = getApart($id_apart);
+    session_start();
+    $_SESSION["id_apart_select"] = $id_apart;
+} ?>
 <section class="fiche-apartement">
     <article class="info-general">
-        <h2>Apartement N° x</h2>
+        <h2>Apartement N° <?= $apart["id_apart"] ?></h2>
         <ul>
-            <li>chambre :</li>
-            <li>description : sdf</li>
+            <li>chambre : <?= $apart["nb_chambre"] ?></li>
+            <li>description : <?= $apart["description"] ?></li>
         </ul>
     </article>
 
     <article class="status">
-        <h2>dispo</h2>
-        <h2><a href="">ocuper par : resp</a></h2>
+        <?php if (apartementIsDispo($id_apart)) { ?>
+            <h2>dispo</h2>
+        <?php } else { ?>
+            <h2><a href="">ocuper par : resp</a></h2>
+        <?php } ?>
     </article>
 
     <article class="action-location">
-        <a href="">Debuté Location</a>
-        <a href="">Arreté location</a>
+        <?php if (apartementIsDispo($id_apart)) { ?>
+            <a href="location/confirm_location.php">Debuté Location</a>
+        <?php } else { ?>
+            <a href="">Arreté location</a>
+        <?php } ?>
     </article>
 </section>

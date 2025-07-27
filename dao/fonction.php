@@ -47,7 +47,6 @@ function addResponsable($idLocation,$idLocataire,$numResp1,$numResp2) {
                 '%s'
             );";
     $sql = sprintf($sql,$idLocation,$idLocataire,$numResp1,$numResp2);
-    var_dump($sql);
     $request = mysqli_query(bddConnect(),$sql);
 
     return $request == null ? false : true;
@@ -62,5 +61,55 @@ function stopLocation($idLocation) {
     $request = mysqli_query(bddConnect(),$sql);
 
     return $request == null ? false : true;
+}
+
+function getAllApartements() {
+    $sql = "SELECT id_apart FROM apartements;";
+    $request = mysqli_query(bddConnect(),$sql);
+
+    $listeAparts = array();
+    while(($apart = mysqli_fetch_assoc($request)) != null) {
+        $listeAparts[] = $apart;
+    }
+    return $listeAparts;
+}
+
+function apartementIsDispo($idApart) {
+    $sql = "SELECT * FROM location WHERE id_apart = %s AND date_fin >= NOW();";
+    $sql = sprintf($sql,$idApart);
+    $request = mysqli_query(bddConnect(),$sql);
+    $nb_line = mysqli_num_rows($request);
+
+    return ($nb_line == 0) ? true : false;
+}
+
+function getCurrentLocation($idApart) {
+    $sql = "SELECT * FROM location WHERE id_apart = %s AND date_fin >= NOW();";
+    $sql = sprintf($sql,$idApart);
+    $request = mysqli_query(bddConnect(),$sql);
+    return mysqli_fetch_assoc($request);
+}
+
+function getApart($idApart) {
+    $sql = "SELECT * FROM apartements WHERE id_apart = %s;";
+    $sql = sprintf($sql,$idApart);
+    $request = mysqli_query(bddConnect(),$sql);
+    return mysqli_fetch_assoc($request);
+}
+
+function getLastIssertId() {
+    $sql = "SELECT LAST_INSERT_ID();";
+    $request = mysqli_query(bddConnect(),$sql);
+    return mysqli_fetch_assoc($request)["LAST_INSERT_ID()"];
+}
+
+function getResponsableLocation($idLocation) {
+    $sql = "SELECT * FROM v_resp_location_locataire WHERE id_location = %s;";
+    $sql = sprintf($sql,$idLocation);
+    $request = mysqli_query(bddConnect(),$sql);
+    return mysqli_fetch_assoc($request);
+}
+function locationHaveResponsable($idLocation) {
+    return getResponsableLocation($idLocation) != null ;
 }
 ?>

@@ -12,7 +12,11 @@ include("../dao/fonction.php");
 
 <body>
     <header>
-
+        <nav>
+            <ul>
+                <li><a href="modele.php?p=l_apart.php">Liste des apartements</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <?php if (isset($_GET["p"])) {

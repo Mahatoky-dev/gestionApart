@@ -1,4 +1,6 @@
 <?php
 include("fonction.php");
-var_dump(stopLocation(1));
+addResponsable(8,1,"e","s");
+var_dump(locationHaveResponsable(4));
+
 ?>

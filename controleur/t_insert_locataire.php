@@ -3,7 +3,7 @@ include("../dao/fonction.php");
 session_start();
 if($_SERVER["REQUEST_METHOD"] === "GET") {
     $id_location = $_GET["id_location"];
-
+    $idApart = $_SESSION["id_apart_select"];
     $nom = $_GET["nom"];
     $sexe = $_GET["sexe"];
     addLocataire($id_location,$nom,$sexe);
@@ -14,11 +14,10 @@ if($_SERVER["REQUEST_METHOD"] === "GET") {
         $numResp2 = $_GET["num_resp_2"];
 
         $idCurrentLocataire = getLastIssertId();
-        var_dump("id curent locataire : " . $idCurrentLocataire);
         addResponsable($id_location,$idCurrentLocataire,$numResp1,$numResp2);
     }
 
-    header("Location: ../pages/modele.php?p=location/fiche_location.php&id_location=$id_location");
+    header("Location: ../pages/modele.php?p=f_apart.php&id_location=$id_location&id_apart=$idApart");
     exit();
 }
 ?>

@@ -142,3 +142,21 @@ orientation aartements :
     - [ok] recuperer la liste des current locataire d'une apartement
     - [ok] recuperer les information de location d'une apartement
 
+posibilité de stper une location :
+    - [ok] creation de traitement arret location
+    - [ok] rediriger ver une page de confirmation 
+    - [ok] la page de confirmaiton va rediriger ver taairment si oui 
+    - [ok] rediriger le boutton arrtet locaton de f_apart ver le t avec envois de l'id de la location
+    - [ok] dans la page t_arret_location
+        - [ok] recevoir l'id
+        - [ok] stoper le location par l'id 
+        - [ok] rediriger ver la liste d'apartement
+
+ajouter une confirmation lors de l'arret d'une location :
+    - [ok] cree la page de confrirmation
+        - [ok] message : voulez vous vraiment arreter la location de la chambre N° x ? (responsable actuel : xx)
+        - [ok] ajouter bouton oui non 
+        - [ok] redirger non vers la page de f_apart 
+        - [ok] rediriger oui vers traitement d'arret 
+        - [ok] rediriger traitement d'arrtet ver la page de f_apart
+    - [ok] diriger le bouton oui de confirmation vers le traitement de  l'arrté de confrimation

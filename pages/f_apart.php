@@ -16,16 +16,16 @@
     <article class="status">
         <?php if (apartementIsDispo($id_apart)) { ?>
             <h2>dispo</h2>
-        <?php } else { ?>
-            <h2><a href="">ocuper par : resp</a></h2>
         <?php } ?>
     </article>
 
     <article class="action-location">
         <?php if (apartementIsDispo($id_apart)) { ?>
             <a href="location/confirm_location.php">Debuté Location</a>
-        <?php } else { ?>
-            <a href="">Arreté location</a>
+        <?php } else { 
+            include("location/fiche_location.php");
+            ?>
+            <a href="modele.php?p=location/confirm_arret_location.php">Arreté location</a>
         <?php } ?>
     </article>
 </section>

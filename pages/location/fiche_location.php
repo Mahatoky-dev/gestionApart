@@ -1,5 +1,4 @@
 <?php
-session_start();
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $idApart = $_SESSION["id_apart_select"];
     $listeLocataires = getLocataire($idApart);
@@ -9,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 ?>
 <section class="fiche-location">
     <article class="info-general">
-        <h2>Apartement N° <?= $location["id_apart"] ?></h2>
         <h5>louer depuis : <?= $location["date_debut"] ?></h5>
         <h4>liste locataire :</h4>
         <ul>

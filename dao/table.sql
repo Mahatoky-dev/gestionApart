@@ -33,6 +33,11 @@ CREATE OR REPLACE TABLE resp_location (
     num_resp_2 VARCHAR(50)
 );
 
+CREATE OR REPLACE TABLE img_apart (
+    id_apart INT,
+    nom VARCHAR(50)
+);
+
 -- initialisation des cles etrangere
 ALTER TABLE location ADD CONSTRAINT fk_apart FOREIGN KEY (id_apart) REFERENCES apartements (id_apart);
 
@@ -47,3 +52,5 @@ fk_location FOREIGN KEY (id_location) REFERENCES location(id_location);
 ALTER TABLE resp_location ADD CONSTRAINT
 fk_locataire FOREIGN KEY (id_locataire) REFERENCES locataire(id_locataire);
 
+ALTER TABLE img_apart ADD CONSTRAINT 
+fk_img_apart FOREIGN KEY (id_apart) REFERENCES apartements (id_apart);

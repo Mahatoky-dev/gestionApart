@@ -68,3 +68,15 @@ SELECT id_resp,nom_resp FROM v_apart_resp WHERE id_apart = %s;
 
 -- prendre la liste de locataire d'une maison
 SELECT * FROM v_apart_locataire  WHERE id_apart = %s;
+
+
+-- manupulation des image
+-- ajouter une image dans la base
+INSERT INTO 
+    img_apart 
+VALUES (
+    %s,
+    '%s'
+);
+
+SELECT * FROM img_apart WHERE id_apart = %s;

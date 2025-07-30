@@ -2,7 +2,10 @@
 $listeAparts = getAllApartements();
 ?>
 <section class="list-apart container-fluid ">
-    <h2>liste des apartements</h2>
+    <div class="header-list d-flex justify-content-between">
+        <h2>liste des apartements</h2>
+        <?php include("apartement/add_apart.php") ;?>
+    </div>
 
     <div class="row g-4 justify-content-around">
         <?php foreach ($listeAparts as $apart) { ?>
@@ -14,7 +17,7 @@ $listeAparts = getAllApartements();
                         <img class="card-img-bottom" src="../image/apart.png" alt="">
                     </a>
                 </article>
-                
+
             </div>
         <?php } ?>
     </div>

@@ -120,4 +120,30 @@ function getLocataire($idApart) {
     }
     return $listeLocataires;
 }
+
+//traitemnt des images 
+function insertImgApart($idApart,$nameImage) {
+    $sql = "INSERT INTO 
+                img_apart 
+            VALUES (
+                %s,
+                '%s'
+            );";
+    $sql = sprintf($sql,$idApart,$nameImage);
+    $request = mysqli_query(bddConnect(),$sql);
+
+    return $request == null ? false : true;
+}
+
+function getImageApart($idApart) {
+    $sql = "SELECT * FROM img_apart WHERE id_apart = %s;";
+    $sql = sprintf($sql,$idApart);
+    $request = mysqli_query(bddConnect(),$sql);
+    
+    $listApart = array();
+     while(($apart = mysqli_fetch_assoc($request)) != null) {
+        $listApart[] = $apart;
+    }
+    return $listApart;
+}
 ?>

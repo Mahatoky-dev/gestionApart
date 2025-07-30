@@ -191,7 +191,36 @@ stylisation de la page :
 etape suivante :
     - possibilité d'ajouté une apartement :
         todo :
-            - html :
-                - formulaire
-                    - nom  
+            - [ok] html :
+                - [ok] formulaire
+                    - [ok] nb de chambre
+                    - [ok] description de l'apartement
+                    - [ok] champ image pour inseret l'image de l'apartement
                 - traiement
+                    - [ok] nuste cree la page de traitement
+            - dinamique :
+                - insert l'apartement dans la base
+                    - [ok] recevoir les information saisi
+                    - [ok] inseret dans la base les informations saisi
+                    - [ok] rediriger vers la page liste
+                - dinamiser l'image de la chambre :
+                    - interation avec la base :
+                        - [ok] cree la table image_apart 
+                            - [ok] id apart 
+                            - [ok] nom
+                        - cree fonction pour interagir avec les images
+                            - [ok] fonction isertion d'image
+                            - [ok] recuperer les image d'une apartement
+                    - documentation dons la maniere d'insert les images
+                        - recevoir l'image
+                        - chager l'encripting pour permetre la transfere de fichier
+                        - traiter 
+                            - verification du type
+                            - chagement de nom 
+
+                    - [ok] todo image :
+                        - [ok] ajouté encripting 
+                        - [ok] verifier si l'image est recu
+                        - [ok] generer le nom unique
+                        - [ok] ajouter dans le dossier le nom unique (avec le chemin)
+                    - [ok] insertion dans la base et redirection

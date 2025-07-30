@@ -167,7 +167,7 @@ stylisation de la page :
     - [ok] ajout de header : 
         - [ok] ducumentation bootsrap sur la manier dons on consoi un header 
         - [ok] ajout du style de header avec bootstrap
-    - ajout de style pour :
+    - ajout de style simpliste pour :
         - [ok] la liste des apartements
             - [ok] imaginer le style que je veux
             - [ok] documentation bootsrap pour la realisation don la disposition des elements la taille des texte et tous ce qui conserne les textes
@@ -179,11 +179,19 @@ stylisation de la page :
                 - [ok] sur les borders 
             - [ok] realisation
                 - [ok] rearangement du html
-        - du fromulaire location 
-            - imagination du style 
-                - pour le boutton ajouter :
-                    - lorsqu'on clique sur ce boutton , on affiche dans un modale le formulaire pour insrret un locataire
-            - documemntation 
-                - aprendre profondement le fonctionnement du modale 
-            - realisation
-        - le 2 page de confirmation
+        - [ok] du fromulaire location 
+            - [ok] imagination du style 
+                - [ok] pour le boutton ajouter :
+                    - [ok] lorsqu'on clique sur ce boutton , on affiche dans un modale le formulaire pour insrret un locataire
+            - [ok] documemntation 
+                - [ok] aprendre profondement le fonctionnement du modale 
+            - [ok] realisation
+        - [ok] le 2 page de confirmation
+    
+etape suivante :
+    - possibilité d'ajouté une apartement :
+        todo :
+            - html :
+                - formulaire
+                    - nom  
+                - traiement

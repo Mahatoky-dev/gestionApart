@@ -3,17 +3,14 @@ if (isset($_SESSION["id_apart_select"])) {
     $idApart = $_SESSION["id_apart_select"];
     $currentLocation = getCurrentLocation($idApart);
     $apartEstEnLocation = $currentLocation != null;
+    $btn_name = ($apartEstEnLocation) ? "ajouté" : "Commencé Location" ;
 }
 ?>
 
 <section class="form-locataire">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
-        <?php if ($apartEstEnLocation) { ?>
-            ajouté
-        <?php } else { ?>
-            Commencé Location
-        <?php } ?>
+        <?= $btn_name ?>
     </button>
 
     <div class="modal fade " id="formModal">

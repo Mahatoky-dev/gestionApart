@@ -73,7 +73,7 @@ function getAllApartements() {
 }
 
 function apartementIsDispo($idApart) {
-    $sql = "SELECT * FROM location WHERE id_apart = %s AND date_fin >= NOW();";
+    $sql = "SELECT * FROM location WHERE id_apart = %s AND date_fin > NOW();";
     $sql = sprintf($sql,$idApart);
     $request = mysqli_query(bddConnect(),$sql);
     $nb_line = mysqli_num_rows($request);
@@ -107,6 +107,7 @@ function getRespLocationApartement($idApart) {
     $request = mysqli_query(bddConnect(),$sql);
     return mysqli_fetch_assoc($request);
 }
+
 
 function getLocataire($idApart) {
     $sql = "SELECT * FROM v_apart_locataire  WHERE id_apart = %s;";

@@ -160,3 +160,30 @@ ajouter une confirmation lors de l'arret d'une location :
         - [ok] rediriger oui vers traitement d'arret 
         - [ok] rediriger traitement d'arrtet ver la page de f_apart
     - [ok] diriger le bouton oui de confirmation vers le traitement de  l'arrté de confrimation
+
+stylisation de la page :
+    - [ok] importer bootsrap dans le projets
+    - [ok] cree une fichier css perso
+    - [ok] ajout de header : 
+        - [ok] ducumentation bootsrap sur la manier dons on consoi un header 
+        - [ok] ajout du style de header avec bootstrap
+    - ajout de style pour :
+        - [ok] la liste des apartements
+            - [ok] imaginer le style que je veux
+            - [ok] documentation bootsrap pour la realisation don la disposition des elements la taille des texte et tous ce qui conserne les textes
+            - [OK] realisation
+        - [ok] de la fiche d'apartement
+            - [OK] imagination du style 
+            - [OK] documemntation 
+                - [ok] sur la disposition des elements verticalement et horizontalement
+                - [ok] sur les borders 
+            - [ok] realisation
+                - [ok] rearangement du html
+        - du fromulaire location 
+            - imagination du style 
+                - pour le boutton ajouter :
+                    - lorsqu'on clique sur ce boutton , on affiche dans un modale le formulaire pour insrret un locataire
+            - documemntation 
+                - aprendre profondement le fonctionnement du modale 
+            - realisation
+        - le 2 page de confirmation
